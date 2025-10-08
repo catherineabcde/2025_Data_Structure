@@ -28,9 +28,9 @@ static void Resize(StaticArray* arr) {
 }
 
 void StaticArrayInsert(StaticArray* arr, int id, int score) {
-
+    // Check if id is valid
     if(id < 1 || id >= MAX_ID) {
-        printf("Out of range!")
+        printf("Out of range!");
 
         return;
     }
@@ -56,4 +56,55 @@ void StaticArrayInsert(StaticArray* arr, int id, int score) {
     }
 
     arr->ScoreCount++;
+}
+
+int* StaticArraySearch(StaticArray* arr, int id, int* result_count) {
+    // Check if id is valid
+    if(id < 1 || id >= MAX_ID) {
+        printf("Out of range!");
+
+        return NULL;
+    }
+
+    if(arr->idx[id] == EMPTY) {
+        printf("ID not found!");
+        return NULL;
+    }
+
+    *result_count = 0;
+    // First-round iteration: count how many scores are there for this id
+    int count = 0;
+    int current = arr->idx[id];
+    while(current != EMPTY) {
+        count++;
+        current = arr->scores[current].next;
+    }
+
+    // Second-round iteration: allocate memory for result array and fill it
+    int* result = (int*)malloc(count * sizeof(int));
+    current = arr->idx[id];
+    for(int i=0; i<count; i++) {
+        result[i] = arr->scores[current].score;
+        current = arr->scores[current].next;
+    }
+
+    *result_count = count;
+
+    return result;
+}
+
+long long StaticArraySum(StaticArray* arr) {
+    long long sum = 0;
+
+    for(int i=0; i<arr->ScoreCount; i++) {
+        sum += arr->scores[i].score;
+    }
+
+    return sum;
+}
+
+void StaticArrayFree(StaticArray* arr) {
+    free(arr->idx);
+    free(arr->scores);
+    free(arr);
 }
