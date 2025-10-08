@@ -38,7 +38,7 @@ typedef struct {
 
 StaticArray* newStaticArray();
 void StaticArrayInsert(StaticArray* arr, int id, int score);
-long long StaticArraySearch(StaticArray* arr, int id);
+int* StaticArraySearch(StaticArray* arr, int id);
 long long StaticArraySum(StaticArray* arr);
 void StaticArrayFree(StaticArray* arr);
 
