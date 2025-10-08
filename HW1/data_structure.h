@@ -1,4 +1,4 @@
-#ifdef DATA_STRUCTURES_H
+#ifndef DATA_STRUCTURES_H
 #define DATA_STRUCTURES_H
 
 /* Universal */
@@ -37,7 +37,7 @@ typedef struct {
 } StaticArray;
 
 StaticArray* newStaticArray();
-void StaticArrayInsert(node* N, int id, int score);
+void StaticArrayInsert(StaticArray* arr, int id, int score);
 long long StaticArraySearch(StaticArray* arr, int id);
 long long StaticArraySum(StaticArray* arr);
 void StaticArrayFree(StaticArray* arr);
