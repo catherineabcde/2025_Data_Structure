@@ -36,7 +36,7 @@ void StaticArrayInsert(StaticArray* arr, int id, int score) {
     }
 
     if(arr->ScoreCount >= arr->capacity) {
-        StaticArrayResize(arr);
+        Resize(arr);
     }
 
     int newidx = arr->ScoreCount;
