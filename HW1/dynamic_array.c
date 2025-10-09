@@ -18,8 +18,6 @@ static void Resize(DynamicArray* arr) {
     
 	arr->capacity *= 10;
 	arr->data = (table*)realloc(arr->data, arr->capacity*sizeof(table));
-	
-	return arr;
 }
 
 // Insert Function
@@ -50,39 +48,57 @@ void DynamicArrayInsert(DynamicArray* arr, int id, int score) {
 }
 
 // Search Function
-void DynamicArraySearch(DynamicArray* arr, int id) {
+int* DynamicArraySearch(DynamicArray* arr, int id, int* result_count) {
     
-	printf("id: %d\n", id);
-    int fd = 1;
+	// Check if id is valid
+	if(id < 1 || id >= MAX_ID) {
+	    printf("Out of range!\n");
 
+		return NULL;
+	}
+
+	*result_count = 0;
+	// First round iteration: count how many scores are there for this id
+	int count = 0;
 	for(int i=0; i<arr->size; i++) {
-        if(arr->data[i].id == id) {
-		    printf("score: %d\n", data[i].score);
-	        fd = 1;
-	   else if(arr->data[i].id != id) {
-		    break;
+	    if(arr->data[i].id == id) {
+	        count++;
 		}
 	}
+	if(count == 0) {
+	    printf("ID not found!\n");
 
-	if(!fd) {
-	    printf("-1\n");
+		return NULL;
 	}
+	// Second round iteration: allocate memory for result array and fill it
+	int* result = (int*)malloc(count * sizeof(int));
+	int idx = 0;
+	for(int i=0; i<arr->size; i++) {
+	    if(arr->data[i].id == id) {
+	        result[idx] = arr->data[i].score;
+			idx++;
+		}
+	}
+	
+	*result_count = count;
+
+	return result;
 }
 
-long long DynamicArraySum(DynamicArray* arr, int id, int score) {
+long long DynamicArraySum(DynamicArray* arr) {
 
 	long long sum = 0;
 	for(int i=0; i<arr->size; i++) {
 		sum += arr->data[i].score;
 	}
 
-	printf("Total: %d data, Total Score: %d/n", arr->size, sum);
+	printf("Total: %d data, Total Score: %lld/n", arr->size, sum);
 
 	return sum;
 }
 
 // Release Memory
-void DynamicArrayFree(da* arr) {
+void DynamicArrayFree(DynamicArray* arr) {
     free(arr->data);
 	free(arr);
 }
@@ -96,6 +112,5 @@ void printArr(DynamicArray* arr) {
 	    printf("id: %d, score: %d\n", arr->data[i].id, arr->data[i].score);
 	}
 }
-
 
 
