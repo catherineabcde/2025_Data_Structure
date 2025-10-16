@@ -1,0 +1,106 @@
+DynamicArray,StaticArray,LinkedListPro
+n 1000 times insert
+Dynamic Array
+1 point time: 0.001990
+Static Array
+1 point time: 0.000027
+Linked List Pro
+1 point time: 0.001062
+n 2000 times insert
+Dynamic Array
+2 point time: 0.003912
+Static Array
+2 point time: 0.000047
+Linked List Pro
+2 point time: 0.002333
+n 3000 times insert
+Dynamic Array
+3 point time: 0.008760
+Static Array
+3 point time: 0.000068
+Linked List Pro
+3 point time: 0.005043
+n 4000 times insert
+Dynamic Array
+4 point time: 0.015517
+Static Array
+4 point time: 0.000124
+Linked List Pro
+4 point time: 0.008548
+n 5000 times insert
+Dynamic Array
+5 point time: 0.024111
+Static Array
+5 point time: 0.000198
+Linked List Pro
+5 point time: 0.011486
+n 6000 times insert
+Dynamic Array
+6 point time: 0.034803
+Static Array
+6 point time: 0.000287
+Linked List Pro
+6 point time: 0.014924
+n 7000 times insert
+Dynamic Array
+7 point time: 0.047330
+Static Array
+7 point time: 0.000395
+Linked List Pro
+7 point time: 0.018127
+n 8000 times insert
+Dynamic Array
+8 point time: 0.061714
+Static Array
+8 point time: 0.000615
+Linked List Pro
+8 point time: 0.021375
+n 9000 times insert
+Dynamic Array
+9 point time: 0.078032
+Static Array
+9 point time: 0.000841
+Linked List Pro
+9 point time: 0.024983
+n 10000 times insert
+Dynamic Array
+10 point time: 0.096393
+Static Array
+10 point time: 0.001066
+Linked List Pro
+10 point time: 0.028283
+n 11000 times insert
+Dynamic Array
+11 point time: 0.116602
+Static Array
+11 point time: 0.001349
+Linked List Pro
+11 point time: 0.030998
+n 12000 times insert
+Dynamic Array
+12 point time: 0.138470
+Static Array
+12 point time: 0.001750
+Linked List Pro
+12 point time: 0.117370
+n 13000 times insert
+Dynamic Array
+13 point time: 0.162720
+Static Array
+13 point time: 0.002165
+Linked List Pro
+13 point time: 0.129847
+n 14000 times insert
+Dynamic Array
+14 point time: 0.188635
+Static Array
+14 point time: 0.002725
+Linked List Pro
+14 point time: 0.132188
+n 15000 times insert
+Dynamic Array
+15 point time: 0.216579
+Static Array
+15 point time: 0.003249
+Linked List Pro
+15 point time: 0.135389

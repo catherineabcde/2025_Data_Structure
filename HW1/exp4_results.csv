@@ -1,0 +1,61 @@
+DynamicArray,StaticArray,LinkedListPro
+n 1000 times insert
+Dynamic Array memory: 10256 bytes (10.02 KB)
+Static Array memory: 4202336 bytes(4103.84 KB)
+Linked List Pro memory: 16016 bytes (15.64 KB)
+n 2000 times insert
+Dynamic Array memory: 20496 bytes (20.02 KB)
+Static Array memory: 4210336 bytes(4111.66 KB)
+Linked List Pro memory: 32016 bytes (31.27 KB)
+n 3000 times insert
+Dynamic Array memory: 40976 bytes (40.02 KB)
+Static Array memory: 4226336 bytes(4127.28 KB)
+Linked List Pro memory: 48016 bytes (46.89 KB)
+n 4000 times insert
+Dynamic Array memory: 40976 bytes (40.02 KB)
+Static Array memory: 4226336 bytes(4127.28 KB)
+Linked List Pro memory: 64016 bytes (62.52 KB)
+n 5000 times insert
+Dynamic Array memory: 40976 bytes (40.02 KB)
+Static Array memory: 4258336 bytes(4158.53 KB)
+Linked List Pro memory: 80016 bytes (78.14 KB)
+n 6000 times insert
+Dynamic Array memory: 81936 bytes (80.02 KB)
+Static Array memory: 4258336 bytes(4158.53 KB)
+Linked List Pro memory: 96016 bytes (93.77 KB)
+n 7000 times insert
+Dynamic Array memory: 81936 bytes (80.02 KB)
+Static Array memory: 4258336 bytes(4158.53 KB)
+Linked List Pro memory: 112016 bytes (109.39 KB)
+n 8000 times insert
+Dynamic Array memory: 81936 bytes (80.02 KB)
+Static Array memory: 4258336 bytes(4158.53 KB)
+Linked List Pro memory: 128016 bytes (125.02 KB)
+n 9000 times insert
+Dynamic Array memory: 81936 bytes (80.02 KB)
+Static Array memory: 4322336 bytes(4221.03 KB)
+Linked List Pro memory: 144016 bytes (140.64 KB)
+n 10000 times insert
+Dynamic Array memory: 81936 bytes (80.02 KB)
+Static Array memory: 4322336 bytes(4221.03 KB)
+Linked List Pro memory: 160016 bytes (156.27 KB)
+n 11000 times insert
+Dynamic Array memory: 163856 bytes (160.02 KB)
+Static Array memory: 4322336 bytes(4221.03 KB)
+Linked List Pro memory: 176016 bytes (171.89 KB)
+n 12000 times insert
+Dynamic Array memory: 163856 bytes (160.02 KB)
+Static Array memory: 4322336 bytes(4221.03 KB)
+Linked List Pro memory: 192016 bytes (187.52 KB)
+n 13000 times insert
+Dynamic Array memory: 163856 bytes (160.02 KB)
+Static Array memory: 4322336 bytes(4221.03 KB)
+Linked List Pro memory: 208016 bytes (203.14 KB)
+n 14000 times insert
+Dynamic Array memory: 163856 bytes (160.02 KB)
+Static Array memory: 4322336 bytes(4221.03 KB)
+Linked List Pro memory: 224016 bytes (218.77 KB)
+n 15000 times insert
+Dynamic Array memory: 163856 bytes (160.02 KB)
+Static Array memory: 4322336 bytes(4221.03 KB)
+Linked List Pro memory: 240016 bytes (234.39 KB)
