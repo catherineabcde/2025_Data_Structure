@@ -1,6 +1,9 @@
 #ifndef DATA_STRUCTURES_H
 #define DATA_STRUCTURES_H
 
+#define MAX_ID (1 << 20)
+#define EMPTY -1
+
 /* Universal */
 typedef struct {
     int id;
@@ -16,14 +19,12 @@ typedef struct {
 
 DynamicArray* newDynamicArray();
 void DynamicArrayInsert(DynamicArray* arr, int id, int score);
-long long DynamicArraySearch(DynamicArray* arr, int id);
+int* DynamicArraySearch(DynamicArray* arr, int id, int* result_count);
 long long DynamicArraySum(DynamicArray* arr);
+size_t DynamicArrayMemoryUsage(DynamicArray* arr);
 void DynamicArrayFree(DynamicArray* arr);
 
 /* for DS2: Static Array */
-#define MAX_ID 1048576
-#define EMPTY -1
-
 typedef struct {
 	int score;
 	int next;
@@ -34,12 +35,14 @@ typedef struct {
 	node* scores;
 	int capacity; // array size
 	int ScoreCount; // how many block are used
+	int lastID;
 } StaticArray;
 
 StaticArray* newStaticArray();
 void StaticArrayInsert(StaticArray* arr, int id, int score);
-int* StaticArraySearch(StaticArray* arr, int id);
+int* StaticArraySearch(StaticArray* arr, int id, int* result_count);
 long long StaticArraySum(StaticArray* arr);
+size_t StaticArrayMemoryUsage(StaticArray* arr);
 void StaticArrayFree(StaticArray* arr);
 
 /* for DS3: Linked List ++*/
@@ -58,6 +61,7 @@ LinkedListPro* newLinkedListPro();
 void LinkedListProInsert(LinkedListPro* list, int id, int score);
 int* LinkedListProSearch(LinkedListPro* list, int id, int* result_count);
 long long LinkedListProSum(LinkedListPro* list);
+size_t LinkedListProMemoryUsage(LinkedListPro* list);
 void LinkedListProFree(LinkedListPro* list);
 
 
