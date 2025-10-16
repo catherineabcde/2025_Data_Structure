@@ -4,7 +4,7 @@
 
 LinkedListPro* newLinkedListPro() {
 
-    LinkedList* list = (LinkedListPro*)malloc(sizeof(LinkedListPro));
+    LinkedListPro* list = (LinkedListPro*)malloc(sizeof(LinkedListPro));
 
     list->head = NULL;
     list->size = 0;
@@ -26,7 +26,8 @@ void LinkedListProInsert(LinkedListPro* list, int id, int score) {
 
     Node* newNode = newLinkedListProNode(id, score);
 
-    /* Condition 1: no node yet */
+    /* Condition 1: no node yet
+        add new node from head */
     if(list->head == NULL) {
         list->head = newNode;
         list->size++;
@@ -34,7 +35,8 @@ void LinkedListProInsert(LinkedListPro* list, int id, int score) {
         return;
     }
 
-    /* Condition 2: address of new node < address of head node */
+    /* Condition 2: address of new node < address of head node
+        exchange the position of the new node and the head node */
     if((void*)newNode < (void*)list->head) {
         newNode->next = list->head;
         list->head = newNode;
@@ -43,8 +45,8 @@ void LinkedListProInsert(LinkedListPro* list, int id, int score) {
         return;
     }
 
-    /* Condition 3: insert in the middle of the linked list
-       address of new node > address of head node */
+    /* Condition 3: address of new node > address of head node
+        find the correct position to insert the node according to the address*/
     Node* current = list->head;
     Node* prev = NULL;
 
@@ -52,7 +54,7 @@ void LinkedListProInsert(LinkedListPro* list, int id, int score) {
 
         prev = current;
         current = current->next;
-        // address of current > address of new node, the loop will end
+        // when address of current > address of new node, the loop will end
     }
     
 
@@ -67,7 +69,7 @@ void LinkedListProInsert(LinkedListPro* list, int id, int score) {
 }
 
 int* LinkedListProSearch(LinkedListPro* list, int id, int* result_count) {
-
+    // Initialize result_count to record how many scores found
     *result_count = 0;
 
     Node* current = list->head;
@@ -80,16 +82,18 @@ int* LinkedListProSearch(LinkedListPro* list, int id, int* result_count) {
         }
         current = current->next;
     }
-
+    // If the id does not exist, return NULL
     if(count == 0) {
         return NULL;
     }
 
+    // Allocate memory for results
     int* results = (int*)malloc(count*sizeof(int));
+    // Check memory allocation
     if(!results) {
         return NULL;
     }
-
+    // Iterate the list and collect scores
     current = list->head;
     int index = 0;
     while(current != NULL && index < count) {
@@ -99,7 +103,6 @@ int* LinkedListProSearch(LinkedListPro* list, int id, int* result_count) {
         }
         current = current->next;
     }
-
     *result_count = count;
     return results;
 }
@@ -117,6 +120,24 @@ long long LinkedListProSum(LinkedListPro* list) {
 
     return sum;
 
+}
+
+size_t LinkedListProMemoryUsage(LinkedListPro* list) {
+
+    size_t memory = 0;
+
+    memory += sizeof(LinkedListPro);
+
+    Node* current = list->head;
+    int count = 0;
+
+    while(current != NULL) {
+        memory += sizeof(Node);
+        current = current->next;
+        count++;
+    }
+
+    return memory;
 }
 
 void LinkedListProFree(LinkedListPro* list) {

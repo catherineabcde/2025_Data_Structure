@@ -16,7 +16,7 @@ DynamicArray* newDynamicArray() {
 // Extend the capacity of the array
 static void Resize(DynamicArray* arr) {
     
-	arr->capacity *= 10;
+	arr->capacity *= 2;
 	arr->data = (table*)realloc(arr->data, arr->capacity*sizeof(table));
 }
 
@@ -24,7 +24,7 @@ static void Resize(DynamicArray* arr) {
 void DynamicArrayInsert(DynamicArray* arr, int id, int score) {
     
 	// Check if there is space available
-	if(arr->size==arr->capacity) {
+	if(arr->size >= arr->capacity) {
 	    Resize(arr);
 	}
 
@@ -43,7 +43,7 @@ void DynamicArrayInsert(DynamicArray* arr, int id, int score) {
 	arr->data[insrtpos].score = score;
 	arr->size++;
 
-	printf("Insertion Complete! Insert (%d,%d) to %d\n", id, score, insrtpos);
+	// printf("DS1 Dynamic Array Insertion Complete!\n");
 
 }
 
@@ -53,7 +53,6 @@ int* DynamicArraySearch(DynamicArray* arr, int id, int* result_count) {
 	// Check if id is valid
 	if(id < 1 || id >= MAX_ID) {
 	    printf("Out of range!\n");
-
 		return NULL;
 	}
 
@@ -66,8 +65,6 @@ int* DynamicArraySearch(DynamicArray* arr, int id, int* result_count) {
 		}
 	}
 	if(count == 0) {
-	    printf("ID not found!\n");
-
 		return NULL;
 	}
 	// Second round iteration: allocate memory for result array and fill it
@@ -92,11 +89,20 @@ long long DynamicArraySum(DynamicArray* arr) {
 		sum += arr->data[i].score;
 	}
 
-	printf("Total: %d data, Total Score: %lld/n", arr->size, sum);
+	printf("Total: %d data, Total Score: %lld\n", arr->size, sum);
 
 	return sum;
 }
 
+size_t DynamicArrayMemoryUsage(DynamicArray* arr) {
+	size_t memory = 0;
+
+	memory += sizeof(DynamicArray);
+
+	memory += sizeof(table) * arr->capacity;
+
+	return memory;
+}
 // Release Memory
 void DynamicArrayFree(DynamicArray* arr) {
     free(arr->data);
